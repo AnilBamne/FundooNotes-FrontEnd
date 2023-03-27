@@ -1,0 +1,70 @@
+<div fxLayoutAlign="center center" fxFlexFill >
+    <mat-card  class="main-container">
+        <form [formGroup]="registerform" (ngSubmit)="OnSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="main-form">
+            <div>
+                <div class="logo-header">
+                    <span class="f">F</span>
+                    <span class="u">u</span>
+                    <span class="n">n</span>
+                    <span class="d">d</span>
+                    <span class="o">o</span>
+                    <span class="o1">o</span>
+                </div>
+                <div class="heading-content">
+                    <span>Create Your Fundoo Account</span>
+                </div>
+                <div>
+                    <div class="name-field">
+                        <mat-form-field class="mat-form-field" appearance="outline"  >
+                            <mat-label class="label">First Name</mat-label>
+                            <input matInput type="firstname" placeholder="firstname" formControlName="firstname">
+                            <mat-error *ngIf="registerform.get('firstname')?.hasError('required')">First name is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-form-field" appearance="outline" class="text" >
+                            <mat-label class="label">Last Name</mat-label>
+                            <input matInput type="lastname" placeholder="lastname" formControlName="lastname">
+                            <mat-error *ngIf="registerform.get('lastname')?.hasError('required')">Last name is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="Username-field">
+                        <mat-form-field appearance="outline" class="mat-form-field" style="width: 100%;">
+                            <mat-label class="label">Email Id</mat-label>
+                            <input matInput type="username"  placeholder="username" formControlName="email">
+                            <mat-error *ngIf="registerform.get('username')?.hasError('required')">Username is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="forgot-password">
+                        <a class="forgot-password link" style="text-decoration: none;" href="/sign in">Use my current email address instead</a>
+                    </div>
+                    <div class="pass-field">
+                        <mat-form-field class="mat-form-field" appearance="outline" >
+                            <mat-label >Password</mat-label>
+                            <input matInput type="password"  placeholder="password" [type]="showPass? 'password':'text'" formControlName="password">
+                            <mat-error *ngIf="registerform.get('password')?.hasError('required')" >Password is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-form-field" appearance="outline">
+                            <mat-label >ConfirmPassword</mat-label>
+                            <input matInput type="password" placeholder="confirmpassword" [type]="showPass? 'password':'text'"  formControlName="confirmpassword">
+                            <mat-error *ngIf="registerform.get('confirmpassword')?.hasError('required')">Confirm password is required</mat-error>
+                        </mat-form-field>
+                        <section>
+                            
+                        </section>
+                    </div>
+                    <div class="show-password text" >
+                        <mat-checkbox (click)="showPassword()">Show Password</mat-checkbox>
+                    </div>
+                    <div class="signin-next-button text">
+                        <h2><a style="text-decoration: none ;" class="link text" href="#">Sign In instead</a></h2>
+                        <button mat-raised-button type="submit" color="primary" class="next-button text">Register</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="logo2">
+            <img class="logo2" src="../../../assets/logo.svg" alt >
+        </div>
+    </mat-card>
+</div>

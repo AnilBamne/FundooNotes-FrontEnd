@@ -1,0 +1,106 @@
+.main-div mat-card{
+    padding: 0px 0px;
+}
+// .main-form{
+// padding: 20px;
+// }
+.toolbar{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+.main-header{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+.main-form-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+.f {
+    color: rgb(9, 167, 229);
+}
+
+.u {
+    color: red;
+}
+
+.n {
+    color: yellow;
+}
+
+.d {
+    color: rgb(9, 167, 229);
+}
+
+.o {
+    color: green;
+}
+
+.o1 {
+    color: red;
+}
+.h1{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.toolbar{
+    font-size: 16px;
+    color: #181818;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.forgot-password{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0px;
+    background-color: white;
+    color:  #1a73e8;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.createAccount-button{
+    color: #1a73e8;
+    background-color: white;
+    border: none;
+}
+.link,.lernmore-text{
+    color:  #1a73e8;
+    font-size: 14px;
+}
+.guest-text{
+    font-size: 12px;
+    padding: 10px 0px 10px 0px;
+    justify-content: initial;
+    display: flex;
+    flex-direction: column;
+}
+.create-next-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.next-button{
+    border: none;
+  color: white;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+

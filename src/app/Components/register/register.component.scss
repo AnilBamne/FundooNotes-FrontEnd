@@ -1,0 +1,110 @@
+// body {
+//     width: 100%;
+//     max-width: 600px;
+//     margin: 0px auto;
+//     padding: 2em;
+//     height: 500px;
+// }
+
+.main-container{
+    display: flex;
+    justify-content: space-between;
+    // border: 10px solid rgb(227, 161, 29);
+}
+.logo-header{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    padding: 0px;
+    margin-top: 20px;
+    
+}
+
+.f {
+    color: rgb(9, 167, 229);
+}
+
+.u {
+    color: red;
+}
+
+.n {
+    color: yellow;
+}
+
+.d {
+    color: rgb(9, 167, 229);
+}
+
+.o {
+    color: green;
+}
+
+.o1 {
+    color: red;
+}
+
+.heading-content{
+    color: #202124;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3333;
+    word-break: break-word;
+    margin-top: 20px;
+}
+
+.link{
+    color:  #1a73e8;
+    font-size: 14px;
+}
+.signin-next-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+
+.logo2{
+    width: 244px;
+    //aspect-ratio: auto 244 / 244;
+    //height: 244px;
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    align-items: center;
+}
+.text{
+    padding: 0px;
+    font-size: 14px;
+    font-family: sans-serif;
+    //justify-content: center;
+}
+.pass-field{
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+    
+}
+.mat-form-field{
+    padding: 0px;
+    margin: 0px;
+}
+
+.show-password{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.name-field{
+    // padding: 0px;
+    // margin-bottom: 10px;
+    // height: 40px;
+    display: flex;
+    //justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}

@@ -1,0 +1,53 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="25">
+        <!-- <header class="main-header">Fundoo</header> -->
+        <div class="main-header">
+            <span class="f">F</span>
+            <span class="u">u</span>
+            <span class="n">n</span>
+            <span class="d">d</span>
+            <span class="o">o</span>
+            <span class="o1">o</span>
+        </div>
+        <h1 class="h1">Sign In</h1>
+        <h2 class="toolbar">Use your fundoo account</h2>
+        <form [formGroup]="loginform" (ngSubmit)="OnSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="main-form">
+           <div class="main-form-div">
+                <div class="email-feild">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                    <input matInput placeholder="EmailId" formControlName="email" >
+                    <mat-error *ngIf="loginform.get('email')?.hasError('required')">Email is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="pass-field">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Password" [type]="showPass? 'password':'text'" formControlName="password">
+                        <mat-error *ngIf="loginform.get('password')?.hasError('required')">Password is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="forgot-password">
+                    <a mat-button class="forgot-password"  href="/resetPassword">Forgot password</a>
+                    <section class="show-password">
+                        <mat-checkbox (click)="showPassword()">Show password</mat-checkbox>
+                    </section>
+                </div>
+                <!-- <div class="show-password">
+                    <label></label>
+                    <input type="checkbox">
+                </div> -->
+                <div class="guest-text">
+                    <p>Not your computer? Use as guest to sign in privately</p>
+                    <a class="lernmore-text" href="#">Learn more</a>
+                </div>
+                <div class="create-next-button">
+                    <!-- <button mat-button type="button" class="createAccount-button">Create Account</button> -->
+                    <h2><a style="text-decoration: none ;" class="link" href="#">Create Account</a></h2>
+                    <button mat-raised-button type="submit" color="primary" class="next-button">Next</button>
+                </div>
+           </div>
+          </form>
+          
+    </mat-card>
+</div> 
