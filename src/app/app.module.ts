@@ -23,6 +23,13 @@ import {MatListModule} from '@angular/material/list';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { TakenoteComponent } from './Components/takenote/takenote.component';
 import { IconsComponent } from './Components/icons/icons.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { DemoComponent } from './Components/demo/demo.component';
+import { GetnotesComponent } from './Components/getnotes/getnotes.component';
+import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
+import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -34,7 +41,11 @@ import { IconsComponent } from './Components/icons/icons.component';
     ResetPasswordComponent,
     DashboardComponent,
     TakenoteComponent,
-    IconsComponent
+    IconsComponent,
+    DemoComponent,
+    GetnotesComponent,
+    DisplaynotesComponent,
+    UpdatenoteComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +62,10 @@ import { IconsComponent } from './Components/icons/icons.component';
     HttpClientModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

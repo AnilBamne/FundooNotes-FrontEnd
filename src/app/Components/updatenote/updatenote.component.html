@@ -1,0 +1,22 @@
+<div class="layout">
+    <div class="title">
+        <input matInput placeholder="Title" [(ngModel)]="title" class="titleInput">
+        <!-- <mat-error >Title is required</mat-error> -->
+        <button mat-button ><img src="../../../assets/takenote-icons/push_pin_black_24dp.svg" height="25px" title="Pin Note"></button>
+    </div>
+    <div class="input">
+        <div >
+            <input matInput placeholder="Take a note" class="takenote" [(ngModel)]="description">
+            <!-- <mat-error >Note description is required</mat-error> -->
+
+        </div>
+        <div class="bottom" >
+            <app-icons></app-icons>
+            <button mat-button class="button" title="undo"><img src="../../../assets/takenote-icons/undo_black_24dp.svg"></button>
+            <button mat-button class="button" title="redo"><img src="../../../assets/takenote-icons/redo_black_24dp.svg"></button>
+            <div style="margin-left: auto;margin-right: 10px;margin-top: 10px;">
+                <button type="button"  (click)="closeDialog()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

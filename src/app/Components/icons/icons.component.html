@@ -1,15 +1,19 @@
 <div class="icon-container">
-    <div>
-        <button mat-button class="button" title="Remind me"><img src="../../../assets/takenote-icons/add_alert_black_24dp.svg"></button>
-        <button mat-button class="button" title="Collaborator"><img src="../../../assets/takenote-icons/person_add_alt_black_24dp.svg"></button>
-        <button mat-button class="button" title="Background options"><img src="../../../assets/takenote-icons/color_lens_black_24dp.svg"></button>
-        <button mat-button class="button" title="Image"><img src="../../../assets/takenote-icons/panorama_black_24dp.svg"></button>
-        <button mat-button class="button" title="Archive"><img src="../../../assets/takenote-icons/archive_black_24dp.svg"></button>
-        <button mat-button class="button" title="More"><img src="../../../assets/takenote-icons/more_vert_black_24dp.svg"></button>
-        <button mat-button class="button" title="More"><img src="../../../assets/takenote-icons/undo_black_24dp.svg"></button>
-        <button mat-button class="button" title="More"><img src="../../../assets/takenote-icons/redo_black_24dp.svg"></button>
-
-        <button mat-button style="font-size: 15px;" class="button">Close</button>
-        
-    </div>
+        <div class="icons">
+            <button mat-button class="button" title="Remind me"><img src="../../../assets/takenote-icons/add_alert_black_24dp.svg"></button>
+            <button mat-button class="button" title="Collaborator"><img src="../../../assets/takenote-icons/person_add_alt_black_24dp.svg"></button>
+            <button mat-button class="button" title="Background options"><img src="../../../assets/takenote-icons/color_lens_black_24dp.svg"></button>
+            <button mat-button class="button" title="Image"><img src="../../../assets/takenote-icons/panorama_black_24dp.svg"></button>
+            <button mat-button class="button"  title="Archive"><img src="../../../assets/takenote-icons/archive_black_24dp.svg"></button>
+            <button mat-button class="button" [matMenuTriggerFor]="menu" title="More"><img src="../../../assets/takenote-icons/more_vert_black_24dp.svg"></button>
+        </div>   
+        <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item>Delete</button>
+        <button mat-menu-item>Add Label</button>
+        <button mat-menu-item>Make a copy</button>
+        <!-- <button mat-menu-item>Item 2</button>
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button> -->
+        </mat-menu> 
 </div>

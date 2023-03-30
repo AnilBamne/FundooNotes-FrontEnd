@@ -1,0 +1,14 @@
+<div *ngFor="let note of noteList" class="display-note">
+    <mat-card>
+        <mat-card-title>{{note.title}}
+            <button><img src="../../../assets/takenote-icons/push_pin_black_24dp.svg"></button>
+        </mat-card-title>
+        <mat-card-content>
+            <p>welcome</p>
+           <div>{{note.description}}</div>
+           <div>{{note.noteId}}</div>
+        </mat-card-content>
+    </mat-card>
+    <app-icons></app-icons>
+</div>
+<div>

@@ -54,7 +54,7 @@
             
             <mat-sidenav-container>
                 <mat-sidenav #sidenav opened="true" mode="side">
-                    <mat-nav-list  >
+                    <mat-nav-list>
                         <a mat-list-item class="icons"><img src="../../../assets/lightbulb_black_24dp.svg">Notes</a>
                         <a mat-list-item class="icons"><img src="../../../assets/notifications_black_24dp.svg">Reminders</a>
                         <a mat-list-item class="icons"><img src="../../../assets/edit_black_24dp.svg">Edit Labels</a>
@@ -62,8 +62,14 @@
                         <a mat-list-item class="icons"><img src="../../../assets/delete_black_24dp.svg">Bin</a> 
                     </mat-nav-list>
                 </mat-sidenav>
-                <mat-sidenav-content>
-                    <div style="height:80vh;"></div>
+                <mat-sidenav-content style="margin-top: 30px;">
+                    <div style="height:80vh;">
+                        <router-outlet> </router-outlet>
+                        <!-- <app-takenote></app-takenote> -->
+                        <!-- <app-demo></app-demo> -->
+                        <!-- <app-getnotes></app-getnotes> -->
+                        
+                    </div>
                 </mat-sidenav-content>
             </mat-sidenav-container>
         </div>

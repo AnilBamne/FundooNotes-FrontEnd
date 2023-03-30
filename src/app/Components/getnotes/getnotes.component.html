@@ -1,0 +1,3 @@
+<app-takenote (takeNotesEvent)="recieverRefreshEvent($event)"></app-takenote>
+
+<app-displaynotes [noteList]="notesArray" (displayNoteEvent)="recieverRefreshEvent($event)"></app-displaynotes>

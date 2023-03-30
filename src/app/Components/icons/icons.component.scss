@@ -1,20 +1,32 @@
 .icon-container{
     display: flex;
     flex-direction: row;
-    justify-content: stretch;
+    justify-content: flex-start;
     align-items: center;
-    margin-top: 40px;
-    width: 50%;
-    height:100px;
+    // margin-top: 40px;
+    // width: 50%;
+    // height:70px;
     background-color: white;
-    margin-left: 300px;
-    border: 1px solid rgba(224, 227, 227, 0.922);
-    
+    // margin-left: 300px;
+    border: 0px solid rgba(224, 227, 227, 0.922);
+    width: 280px;
+}
+.close-btn{
+    display: flex;
+    align-items: end;
+    margin-right: 10px;
 }
 .button{
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 34px;
     background: transparent;
     border: none;
-    border-radius: 50%;
+    border-radius: 40%;
+    padding: 0px;
+    margin: 1px;
+    min-width: 40px;
+}
+img{
+    width: 20px;
+    height: 20px;
 }

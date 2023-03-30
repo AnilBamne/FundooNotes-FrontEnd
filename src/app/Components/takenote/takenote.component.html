@@ -1,15 +1,39 @@
-<div class="take-note-container">
-    <div>
-        <div class="title-bar">
-            <input placeholder="Title" class="input">
-            <button mat-button class="button"><img src="../../../assets/takenote-icons/push_pin_black_24dp.svg"></button>
-        </div>
-        <form class="form-container">
-            
-            <input style="font-size: 15px; "placeholder="Take a note ..." class="input">
-            <button mat-button class="button"><img src="../../../assets/takenote-icons/brush_black_24dp.svg"></button>
-            <button mat-button class="button"><img src="../../../assets/takenote-icons/check_box_black_24dp.svg"></button>
-            <button mat-button class="button"><img src="../../../assets/takenote-icons/panorama_black_24dp.svg"></button>
-        </form>
+<div class="layout">
+    <div class="body-content">
+        <div *ngIf="condition; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <div class="outer-block">
+                <input (click)="show()" placeholder="Take a note" class="title-input">
+                <div class="titleImgSection">
+                    <button mat-button><img src="../../../assets/takenote-icons/check_box_black_24dp.svg" height="25px" title="New list"></button>
+                    <button mat-button><img src="../../../assets/takenote-icons/brush_black_24dp.svg" height="25px" title="New Note With Drawing"></button>
+                    <button mat-button><img src="../../../assets/takenote-icons/panorama_black_24dp.svg" height="25px" title="New Note With Image"></button>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #elseBlock>
+            <form class="form-div" [formGroup]="noteForm" >
+                <div class="title">
+                    <input matInput placeholder="Title" formControlName="title" class="titleInput">
+                    <mat-error *ngIf="noteForm.get('title')?.hasError('required')">Title is required</mat-error>
+                    <button mat-button ><img src="../../../assets/takenote-icons/push_pin_black_24dp.svg" height="25px" title="Pin Note"></button>
+                </div>
+                <div class="input">
+                    <div >
+                        <input matInput placeholder="Take a note" style="margin-left: 10px;" class="takenote" formControlName="description">
+                        <mat-error *ngIf="noteForm.get('description')?.hasError('required')">Note description is required</mat-error>
+
+                    </div>
+                    <div class="bottom" >
+                        <app-icons></app-icons>
+                        <button mat-button class="button" title="undo"><img src="../../../assets/takenote-icons/undo_black_24dp.svg"></button>
+                        <button mat-button class="button" title="redo"><img src="../../../assets/takenote-icons/redo_black_24dp.svg"></button>
+                        <div style="margin-left: auto;margin-right: 10px;margin-top: 10px;">
+                            <button type="button"  (click)="onNoteSubmit()" (click)="hide()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </ng-template>
     </div>
-</div>
+</div >
