@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -30,6 +31,9 @@ import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.co
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { ArchivenoteComponent } from './Components/archivenote/archivenote.component';
+import { TrashnoteComponent } from './Components/trashnote/trashnote.component';
+import { FilterPipe } from './Pipes/filter.pipe';
 
 
 @NgModule({
@@ -45,7 +49,10 @@ import {MatMenuModule} from '@angular/material/menu';
     DemoComponent,
     GetnotesComponent,
     DisplaynotesComponent,
-    UpdatenoteComponent
+    UpdatenoteComponent,
+    ArchivenoteComponent,
+    TrashnoteComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatListModule,
     MatExpansionModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

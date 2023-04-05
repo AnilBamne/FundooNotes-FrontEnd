@@ -41,22 +41,41 @@ token:any;
     }
     return this.httpService.putService(this.base+`Note/UpdateNote?noteId=`+noteId,reqData,true,header);
   }
-  deleteNote(noteId:any){
+  deleteNote(reqData:any){
     let header={
       headers:new HttpHeaders({
         'content-type':'application/json',
         'Authorization':'Bearer '+this.token
       })
       }
-      return this.httpService.deletService(this.base+`Note/DeleteNote?noteId=`+noteId,true,header)
+      return this.httpService.deletService(this.base+`Note/DeleteNote?noteId=`+reqData.noteId,true,header)
     }
-    archiveNote(data:any,noteId:any){
+    archiveNote(reqData:any){
       let header={
         headers:new HttpHeaders({
           'content-type':'application/json',
         'Authorization':'Bearer '+this.token
         })
       }
-      return this.httpService.putService(this.base+`Note/ArchiveOrUnarchive?noteId=`+noteId,data,true,header)
+      return this.httpService.putService(this.base+`Note/ArchiveOrUnarchive?noteId=`+reqData.noteId,{},true,header)
+    }
+
+    trash(reqData:any){
+      let header={
+        headers:new HttpHeaders({
+          'content-type':'application/json',
+        'Authorization':'Bearer '+this.token
+        })
+      }
+      return this.httpService.putService(this.base+`Note/TrashOrUntrash?noteId=`+reqData.noteId,{},true,header)
+    }
+    setColor(reqData:any){
+      let header={
+        headers:new HttpHeaders({
+          'content-type':'application/json',
+        'Authorization':'Bearer '+this.token
+        })
+      }
+      return this.httpService.putService(this.base+`Note/SetNoteColor?noteId=`+reqData.noteId+"&color="+reqData.color,{},true,header)
     }
 }

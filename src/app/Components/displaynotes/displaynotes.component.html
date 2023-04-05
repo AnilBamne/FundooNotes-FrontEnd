@@ -1,19 +1,18 @@
 <div class="layout">
-    <div *ngFor="let note of noteList">
-        <mat-card class="card">
+    <div *ngFor="let note of noteList ">
+        <mat-card class="card" [style.background]="note.color">
             <mat-card-title (click)="editNote(note)">{{note.title}}
                 <button mat-button class="pin"><img src="../../../assets/takenote-icons/push_pin_black_24dp.svg"></button>
             </mat-card-title>
             <mat-card-content>
                <div class="note-desc" (click)="editNote(note)">{{note.description}}</div>
-               <!-- <div>{{note.noteId}}</div> -->
+               
                
                <div>
-                
-                <div> <label>Note Id :</label> {{note.noteId}}</div>
+                    <div> <label>Note Id :</label> {{note.noteId}}</div>
                </div>
             </mat-card-content>
-            <app-icons></app-icons>
+            <app-icons [noteCard]="note" (appIconEvent)="recieveEmitter($event)"></app-icons>
         </mat-card>
     </div>
 </div>

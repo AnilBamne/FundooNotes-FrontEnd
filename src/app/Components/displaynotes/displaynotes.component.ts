@@ -8,12 +8,19 @@ import { UpdatenoteComponent } from '../updatenote/updatenote.component';
   styleUrls: ['./displaynotes.component.scss']
 })
 export class DisplaynotesComponent implements OnInit {
+  filterNote:any
 @Input() noteList:any;
 @Output() displayNoteEvent=new EventEmitter<any>();
-  constructor(private dialog:MatDialog) { }
+message:any
+  constructor(private dialog:MatDialog) { 
+    
+  }
 
   ngOnInit(): void {
+    // this.filter.transform(this.noteList,this.filterNote)
   }
+
+
   editNote(note:any){
     let dialogbox=this.dialog.open(UpdatenoteComponent,{
       width:'40%',
@@ -22,7 +29,14 @@ export class DisplaynotesComponent implements OnInit {
     })
     dialogbox.afterClosed().subscribe(result=>{
       console.log("After update",result);
-      this.displayNoteEvent.emit(result);
+      this.displayNoteEvent.emit(this.message);
     })
+  }
+
+  //iconEvent event emitter method
+  recieveEmitter($event:any){
+    console.log("Icons to display");
+    this.message=$event
+   this.displayNoteEvent.emit($event)
   }
 }

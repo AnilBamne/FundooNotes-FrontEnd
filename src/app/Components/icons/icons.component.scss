@@ -6,7 +6,7 @@
     // margin-top: 40px;
     // width: 50%;
     // height:70px;
-    background-color: white;
+    background-color: transparent;
     // margin-left: 300px;
     border: 0px solid rgba(224, 227, 227, 0.922);
     width: 280px;
@@ -19,7 +19,7 @@
 .button{
     width: 30px;
     height: 34px;
-    background: transparent;
+    // background: transparent;
     border: none;
     border-radius: 40%;
     padding: 0px;
@@ -30,3 +30,32 @@ img{
     width: 20px;
     height: 20px;
 }
+.col-box{
+  padding: 8px;
+    
+}
+.col-option{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+}
+.bgcolor-menu{
+    display: flex;
+    
+}
+.col-btn{
+ border: none;
+ width: 20px;
+ height: 45px;
+ border-radius: 50%;
+ padding: 0px;
+ margin: 0px;
+}
+
+// .bgcolor-menu{
+//     min-width: 480px;
+//     max-width: 580px;
+// }
+::ng-deep.mat-menu-panel {
+    max-width: none !important;
+  }

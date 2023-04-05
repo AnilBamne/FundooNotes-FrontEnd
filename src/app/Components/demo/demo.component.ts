@@ -6,11 +6,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent implements OnInit {
-  @Input() noteList:any;
+  condition:boolean=false
   constructor() { }
 
   ngOnInit(): void {
   }
-  @Output() createEvent=new EventEmitter<string>();
-  
+  show(){
+    this.condition=false
+  }
+  hide(){
+    this.condition=true
+  }
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  filterNote:string='';
+  
+  constructor(private popup:MatSnackBar,private route:Router) { }
 
   ngOnInit(): void {
   }
-
+  logOut(){
+    console.log("logged out")
+    localStorage.removeItem('token');
+    this.route.navigateByUrl("/login")
+    this.popup.open('LogOut Successfull !!!','',{
+      duration:2000,
+      verticalPosition:'bottom'
+    })
+  }
 }

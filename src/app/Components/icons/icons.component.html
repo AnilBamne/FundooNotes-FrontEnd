@@ -1,19 +1,52 @@
 <div class="icon-container">
-        <div class="icons">
-            <button mat-button class="button" title="Remind me"><img src="../../../assets/takenote-icons/add_alert_black_24dp.svg"></button>
-            <button mat-button class="button" title="Collaborator"><img src="../../../assets/takenote-icons/person_add_alt_black_24dp.svg"></button>
-            <button mat-button class="button" title="Background options"><img src="../../../assets/takenote-icons/color_lens_black_24dp.svg"></button>
-            <button mat-button class="button" title="Image"><img src="../../../assets/takenote-icons/panorama_black_24dp.svg"></button>
-            <button mat-button class="button"  title="Archive"><img src="../../../assets/takenote-icons/archive_black_24dp.svg"></button>
-            <button mat-button class="button" [matMenuTriggerFor]="menu" title="More"><img src="../../../assets/takenote-icons/more_vert_black_24dp.svg"></button>
+        <div class="icons" >
+            <div *ngIf="!isTrashed">
+                <button mat-button class="button" title="Remind me" >
+                    <img src="../../../assets/takenote-icons/add_alert_black_24dp.svg">
+                </button>
+                <button mat-button class="button" title="Collaborator" >
+                    <img src="../../../assets/takenote-icons/person_add_alt_black_24dp.svg">
+                </button>
+                <button mat-button class="button" title="Background options" [matMenuTriggerFor]="color" aria-label="Example icon-button with a menu">
+                    <img src="../../../assets/takenote-icons/color_lens_black_24dp.svg">
+                    <mat-menu #color="matMenu" >
+                        <div class="col-option" >
+                            <div *ngFor="let color of Colors" class="col-box">
+                                <button mat-button class="col-btn" (click)="setColor(color)" [style.background]="color.code"></button>
+                            </div>
+                        </div>
+                    </mat-menu> 
+                </button>
+                <button mat-button class="button" title="Image" *ngIf="!isTrashed">
+                    <img src="../../../assets/takenote-icons/panorama_black_24dp.svg">
+                </button>
+                <button mat-button class="button" (click)="archiveNote()" title="Archive" *ngIf="!isArchived">
+                    <img src="../../../assets/takenote-icons/archive_black_24dp.svg">
+                </button>
+                <button mat-button class="button" (click)="unArchiveNote()" title="Unarchive" *ngIf="isArchived">
+                    <img src="../../../assets/takenote-icons/unarchive_black_24dp.svg">
+                </button>
+                <button mat-button class="button" [matMenuTriggerFor]="menu" title="More" >
+                    <img src="../../../assets/takenote-icons/more_vert_black_24dp.svg">
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="trashNote()">Delete</button>
+                        <button mat-menu-item>Add Label</button>
+                        <button mat-menu-item>Make a copy</button>
+                        <!-- <button mat-menu-item>Item 2</button>
+                        <button mat-menu-item>Item 1</button>
+                        <button mat-menu-item>Item 2</button> -->
+                        </mat-menu> 
+                </button>
+            </div>
+            <div *ngIf="isTrashed">
+                <button mat-button class="button" (click)="unTrash()" title="Restore" >
+                    <img src="../../../assets/takenote-icons/restore_black_24dp.svg">
+                </button>
+                <button mat-button class="button" (click)="deleteNote()" title="DeleteForever">
+                    <img src="../../../assets/takenote-icons/delete_forever_black_24dp.svg">
+                </button>
+            </div>
         </div>   
         <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
-        <mat-menu #menu="matMenu">
-        <button mat-menu-item>Delete</button>
-        <button mat-menu-item>Add Label</button>
-        <button mat-menu-item>Make a copy</button>
-        <!-- <button mat-menu-item>Item 2</button>
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button> -->
-        </mat-menu> 
+        
 </div>

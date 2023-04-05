@@ -1,21 +1,19 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NoteService } from 'src/app/Services/note/note.service';
 
 @Component({
-  selector: 'app-getnotes',
-  templateUrl: './getnotes.component.html',
-  styleUrls: ['./getnotes.component.scss']
+  selector: 'app-archivenote',
+  templateUrl: './archivenote.component.html',
+  styleUrls: ['./archivenote.component.scss']
 })
-export class GetnotesComponent implements OnInit {
-notesArray:any;
-@Output() displayNoteEvent=new EventEmitter<string>();
-
+export class ArchivenoteComponent implements OnInit {
+  notesArray:any;
   constructor(private noteService:NoteService) { }
 
   ngOnInit(): void {
-    console.log("getting notes")
-    this.onNoteSubmit();
+    this.onNoteSubmit()
   }
+
   onNoteSubmit(){
     this.noteService.getNote().subscribe((response:any)=>{
       console.log(response);
@@ -24,14 +22,14 @@ notesArray:any;
       console.log(this.notesArray);
       this.notesArray.reverse();
       //filtering the only unarchived and untrashed notes
+      console.log("retriving only archived notes")
       this.notesArray=this.notesArray.filter((object:any)=>{
-        return object.isTrash===false && object.isArchive===false
+        return object.isArchive===true&&object.isTrash===false
       })
     });
   }
-
-  // event emitter method
-  recieverRefreshEvent($event:any){
+  recieveArchivedNotes($event:any){
+    
     this.onNoteSubmit();
   }
 }

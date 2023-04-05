@@ -13,10 +13,10 @@ export class TakenoteComponent implements OnInit {
   noteForm!:FormGroup;
   submitted=false;
   token:any;
-  condition:boolean=true;
+  condition:boolean=true;   
   // calling event emitter to show  notes on dashboard
   @Output() takeNotesEvent=new EventEmitter<string>();
- 
+
   constructor(private formBuilder:FormBuilder,private noteService:NoteService,private activeRouts:ActivatedRoute) { }
 
   ngOnInit(): void {

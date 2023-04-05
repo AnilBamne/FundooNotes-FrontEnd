@@ -14,12 +14,12 @@ export class HttpService {
   {
     return this.http.put(url,payload,token && httpOptions)
   }
-   getService(url:string,token:boolean=true,httpOptions:any={})
-   {
+  getService(url:string,token:boolean=true,httpOptions:any={})
+  {
     return this.http.get(url,token && httpOptions)
-   }
-   deletService(url:string,token:boolean=true,httpOptions:any={})
-   {
-    return this.http.get(url,token && httpOptions)
-   }
+  }
+  deletService(url:string,token:boolean=true,httpOptions:any={})
+  {
+    return this.http.delete(url,token && httpOptions)
+  }
 }
