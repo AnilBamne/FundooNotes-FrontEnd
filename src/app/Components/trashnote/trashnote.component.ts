@@ -1,5 +1,5 @@
-import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/Services/note/note.service';
 
 @Component({
@@ -26,8 +26,10 @@ export class TrashnoteComponent implements OnInit {
       this.notesArray.reverse();
       //filtering the only unarchived and untrashed notes
       console.log("getting only trashed notes");
+      
       this.notesArray=this.notesArray.filter((object:any)=>{
         return object.isTrash===true;
+        
       })
     });
   }

@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/Services/note/note.service';
 
 @Component({
@@ -14,6 +15,7 @@ id:any;
   constructor(
     private dialogbox:MatDialogRef<UpdatenoteComponent>,
     private noteService:NoteService,
+    private popup:MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data:any ) 
     {
       this.title=data.title,
@@ -32,6 +34,11 @@ id:any;
     {
       console.log("*** Note-Updated ***")
       console.log(respons)
+      //snackbar for displaying popup msg
+      this.popup.open('Update note Successfull !!!','',{
+        duration:2000,
+        verticalPosition:'bottom'
+      })
     });
     this.dialogbox.close();
   }

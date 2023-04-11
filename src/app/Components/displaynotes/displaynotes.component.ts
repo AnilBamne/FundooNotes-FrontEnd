@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DataService } from 'src/app/Services/Data/data.service';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 
 @Component({
@@ -11,13 +12,17 @@ export class DisplaynotesComponent implements OnInit {
   filterNote:any
 @Input() noteList:any;
 @Output() displayNoteEvent=new EventEmitter<any>();
+@Output() displsyLabelEvent=new EventEmitter<string>();
 message:any
-  constructor(private dialog:MatDialog) { 
+  constructor(private dialog:MatDialog,private data:DataService) { 
     
   }
 
   ngOnInit(): void {
-    // this.filter.transform(this.noteList,this.filterNote)
+    this.data.incomingData.subscribe(response=>{
+      console.log("searching note ...",response)
+      this.filterNote=response;
+    })
   }
 
 
@@ -38,5 +43,6 @@ message:any
     console.log("Icons to display");
     this.message=$event
    this.displayNoteEvent.emit($event)
+   this.displsyLabelEvent.emit($event)
   }
 }

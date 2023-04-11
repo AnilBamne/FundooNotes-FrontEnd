@@ -28,25 +28,38 @@
                 </button>
                 <button mat-button class="button" [matMenuTriggerFor]="menu" title="More" >
                     <img src="../../../assets/takenote-icons/more_vert_black_24dp.svg">
-                    <mat-menu #menu="matMenu">
-                        <button mat-menu-item (click)="trashNote()">Delete</button>
-                        <button mat-menu-item>Add Label</button>
+                    <mat-menu #menu="matMenu" >
+                        <button mat-menu-item (click)="moveToTrash()">Delete</button>
+                        <button mat-menu-item  [matMenuTriggerFor]="label" >Add Label</button>
                         <button mat-menu-item>Make a copy</button>
-                        <!-- <button mat-menu-item>Item 2</button>
-                        <button mat-menu-item>Item 1</button>
-                        <button mat-menu-item>Item 2</button> -->
-                        </mat-menu> 
+                       
+                    </mat-menu >
+                    <mat-menu #label="matMenu" (click)='$event.stopPropagation()'>
+                        <mat-card class="card">
+                            <p>Label Note</p>
+                            <input placeholder="label name" class="label-input" [(ngModel)]="labelname" (click)='$event.stopPropagation()'>
+                            <button mat-menu-item type="submit" class="createbtn" (click)="addLabel(labelname)"><img src="../../../assets/label-icons/add_black_24dp.svg">Create</button>
+                            <div *ngFor="let label of labelList">
+                                <div>
+                                    <mat-checkbox (click)="addExistingLabel(label)">{{label.labelName}}</mat-checkbox>
+                                </div>
+                            </div>
+                        </mat-card>
+                        <!-- <input placeholder="label name" class="label-input" [(ngModel)]="labelname" (click)='$event.stopPropagation()'>
+                        <button mat-menu-item type="submit" class="createbtn" (click)="addLabel(labelname)"><img src="../../../assets/label-icons/add_black_24dp.svg">Create</button> -->
+                        
+                    </mat-menu>
+
                 </button>
             </div>
             <div *ngIf="isTrashed">
                 <button mat-button class="button" (click)="unTrash()" title="Restore" >
-                    <img src="../../../assets/takenote-icons/restore_black_24dp.svg">
+                    <img src="../../../assets/takenote-icons/restore_from_trash_black_24dp.svg">
                 </button>
                 <button mat-button class="button" (click)="deleteNote()" title="DeleteForever">
                     <img src="../../../assets/takenote-icons/delete_forever_black_24dp.svg">
                 </button>
             </div>
         </div>   
-        <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
         
 </div>

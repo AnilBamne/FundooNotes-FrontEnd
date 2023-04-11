@@ -34,6 +34,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { ArchivenoteComponent } from './Components/archivenote/archivenote.component';
 import { TrashnoteComponent } from './Components/trashnote/trashnote.component';
 import { FilterPipe } from './Pipes/filter.pipe';
+import { GetLabelsComponent } from './Components/get-labels/get-labels.component';
+import { DisplayLabelComponent } from './Components/display-label/display-label.component';
+import { UpdatelabelComponent } from './Components/updatelabel/updatelabel.component';
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import { FilterPipe } from './Pipes/filter.pipe';
     UpdatenoteComponent,
     ArchivenoteComponent,
     TrashnoteComponent,
-    FilterPipe
+    FilterPipe,
+    GetLabelsComponent,
+    DisplayLabelComponent,
+    UpdatelabelComponent
   ],
   imports: [
     BrowserModule,

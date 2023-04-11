@@ -4,7 +4,9 @@ import { AuthguardGuard } from './AuthorizationGuard/authguard.guard';
 import { ArchivenoteComponent } from './Components/archivenote/archivenote.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { DemoComponent } from './Components/demo/demo.component';
+import { DisplayLabelComponent } from './Components/display-label/display-label.component';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { GetLabelsComponent } from './Components/get-labels/get-labels.component';
 import { GetnotesComponent } from './Components/getnotes/getnotes.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
@@ -31,7 +33,9 @@ const routes: Routes = [
     // {path:'',redirectTo:'home/note',pathMatch:'full'},
     {path:'note',component:GetnotesComponent},
     {path:'archive',component:ArchivenoteComponent},
-    {path:'trash',component:TrashnoteComponent}
+    {path:'trash',component:TrashnoteComponent},
+    {path:'label',component:GetLabelsComponent},
+    {path:'displaylabel',component:DisplayLabelComponent}
   ]},
 
 

@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { retryWhen } from 'rxjs';
+import { LabelService } from 'src/app/Services/label/label.service';
 import { NoteService } from 'src/app/Services/note/note.service';
+import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 
 @Component({
   selector: 'app-icons',
@@ -18,11 +21,18 @@ export class IconsComponent implements OnInit {
   
   // trash/archive emitter
   @Output() appIconEvent=new EventEmitter<string>()
-  constructor(private noteService:NoteService) { }
+  @Output() displsyLabelEvent=new EventEmitter<string>();
+
+  //for label
+  labelname:any;
+  labelArray:any;
+  labelList:any;
+  constructor(private noteService:NoteService,private dialog:MatDialog,private labelService:LabelService) { }
 
   ngOnInit(): void {
     this.isTrashed=this.noteCard.isTrash
     this.isArchived=this.noteCard.isArchive
+    this.GetLabels();
   }
   //when clicked on archive btn that note should be archieved
   archiveNote(){
@@ -48,7 +58,7 @@ export class IconsComponent implements OnInit {
   }
 
   //when clicked on delete btn that note should be trashed
-  trashNote(){
+  moveToTrash(){
     this.isTrash=false
     let reqData={
       noteId:this.noteCard.noteId
@@ -112,4 +122,31 @@ export class IconsComponent implements OnInit {
       this.appIconEvent.emit(response)
     })
   }
+
+  addLabel(labelname:any){
+    this.labelService.addLabel(labelname,this.noteCard.noteId).subscribe((response:any)=>{
+      console.log("label added"+response);
+      this.displsyLabelEvent.emit(response)
+    })
+    this.labelname="";
+  }
+
+  GetLabels()
+  {
+    this.labelService.get().subscribe((response:any)=>{
+      console.log("storing labels in array")
+      this.labelArray=response.data;
+      console.log(this.labelArray);
+      this.labelList=this.labelArray
+   })
+ }
+ addExistingLabel(label:any){
+  this.labelService.addExistingLabel(label.labelId,this.noteCard.noteId).subscribe((response:any)=>{
+    console.log("existing label added"+response);
+    this.displsyLabelEvent.emit(response)
+  })
+  this.labelname="";
+ }
+
+
 }

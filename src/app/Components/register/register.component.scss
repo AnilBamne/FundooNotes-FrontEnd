@@ -1,15 +1,11 @@
-// body {
-//     width: 100%;
-//     max-width: 600px;
-//     margin: 0px auto;
-//     padding: 2em;
-//     height: 500px;
-// }
 
 .main-container{
     display: flex;
     justify-content: space-between;
     // border: 10px solid rgb(227, 161, 29);
+}
+.main-form{
+    min-width: 60%;
 }
 .logo-header{
     font-size: 20px;
@@ -107,4 +103,22 @@
     //justify-content: space-between;
     gap: 10px;
     margin-top: 20px;
+}
+
+
+@media only screen and(max-width:600px){
+    
+    .main-form{
+        min-width: 80%;
+    }
+    
+    .name-field ,.pass-field{
+        display: flex;
+        flex-direction: column;
+        //justify-content: space-between;
+        
+    }
+    .logo2{
+        display: none;
+    }
 }

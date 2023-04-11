@@ -6,17 +6,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value:any,filterNote:string) {
-    if(value===''|| filterNote===''){
+    // if(value===''|| filterNote==='')
+    if(value===''){
       return value
     }
-    const noteList=[];
+    const notes=[];
     for(const note of value){
       if(note.title.includes(filterNote)){
-        noteList.push(note);
+        notes.push(note);
       }
     }
     console.log("filter applied")
-    return noteList;
+    return notes;
   }
 
 }

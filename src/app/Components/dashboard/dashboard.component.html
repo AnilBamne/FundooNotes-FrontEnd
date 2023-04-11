@@ -20,7 +20,7 @@
                     </h1>
                     <div raised class="search-box">
                         <img class="search-icon" src="../../../assets/search_black_24dp.svg">
-                        <input class="search-input" type="text" placeholder="Search" [(ngModel)]="filterNote"> 
+                        <input class="search-input" type="text" placeholder="Search" (keyup)="search($event)"> 
                         <span class="clear-icon" >
                             <button mat-button style="min-width: 30px;" class="clear-button ">
                                 <img src="../../../assets/clear_black_24dp.svg">
@@ -62,9 +62,11 @@
                         <!-- <button> <img class="list-icons" src="../../../assets/lightbulb_black_24dp.svg" >Notes</button> -->
                         <a mat-list-item routerLink="./note" class="icons"><img class="list-icons" src="../../../assets/lightbulb_black_24dp.svg">Notes</a>
                         <a mat-list-item class="icons"><img class="list-icons" src="../../../assets/notifications_black_24dp.svg">Reminders</a>
-                        <a mat-list-item class="icons"><img class="list-icons" src="../../../assets/edit_black_24dp.svg">Edit Labels</a>
+                        <a mat-list-item class="icons" (click)="editlabel()"><img class="list-icons" src="../../../assets/edit_black_24dp.svg">Edit Labels</a>
                         <a mat-list-item routerLink="./archive" class="icons"><img class="list-icons" src="../../../assets/archive_black_24dp.svg">Archives</a>
                         <a mat-list-item routerLink="./trash" class="icons"><img class="list-icons" src="../../../assets/delete_black_24dp.svg">Bin</a> 
+                        <!-- <a mat-list-item><app-get-labels></app-get-labels></a> -->
+                        <a><app-get-labels mat-list-item></app-get-labels></a>
                     </mat-nav-list>
                 </mat-sidenav>
                 <mat-sidenav-content >

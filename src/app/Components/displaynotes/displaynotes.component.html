@@ -1,5 +1,6 @@
 <div class="layout">
-    <div *ngFor="let note of noteList ">
+    <div *ngFor="let note of noteList | filter:filterNote">
+
         <mat-card class="card" [style.background]="note.color">
             <mat-card-title (click)="editNote(note)">{{note.title}}
                 <button mat-button class="pin"><img src="../../../assets/takenote-icons/push_pin_black_24dp.svg"></button>

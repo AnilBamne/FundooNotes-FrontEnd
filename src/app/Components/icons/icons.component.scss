@@ -59,3 +59,19 @@ img{
 ::ng-deep.mat-menu-panel {
     max-width: none !important;
   }
+  .card{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 200px;
+    
+  }
+.label-input{
+    height: 40px;
+    padding: 6px;
+    border: none;
+}
+  .createbtn{
+display: flex;
+align-items: center;
+  }
