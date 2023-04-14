@@ -1,0 +1,62 @@
+.main-div{
+    display: flex;
+    flex-direction: column;
+//    align-items: center;
+   justify-content: center;
+   width: 27vw;
+   margin: 0px;
+   padding: 0px;
+}
+.sub-container{
+    border-bottom: 1px solid gray;
+}
+.createlabel{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.label-container{
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin: 10px;
+}
+::ng-deep .mat-dialog-container{
+    width: auto;
+}
+::ng-deep.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    margin: 0;
+     min-width: auto; 
+    
+    padding: 0 8px;
+    
+}
+input{
+    font-size: 14px;
+    padding-left: 20px;
+    width: 14vw;
+    outline: none;
+    border: none;
+}
+button{
+    border-radius: 50%;
+    border: none;
+    // outline: none;
+    // background-color: transparent;
+}
+.text{
+    font-size: 17px;
+    // font-family: sans-serif;
+    border-radius: 10%;
+    margin-top: 8px;
+}
+.label-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.btn{
+    display: flex;
+    justify-content: flex-end;
+}

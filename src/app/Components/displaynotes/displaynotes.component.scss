@@ -16,7 +16,7 @@
 .card{
     display: block;
     margin: 6px;
-    width: 300px;
+    width: 250px;
     height: auto;
     border: 1px solid gray;
     border-radius: 10px;
@@ -38,12 +38,13 @@
     outline: none;
     background-color: transparent;
     border-radius: 40%;
+    opacity: 0.5;
 }
 mat-card-title{
     display: flex;
     justify-content: space-between;
     margin-left: 10px;
-    width: 270px;
+    width: 230px;
     font-size: 18px;
     font-weight: 10px;
 }
@@ -54,11 +55,12 @@ mat-card-content{
     flex-direction: column;
     margin-left: 10px;
     overflow: hidden;
-    width: 270px;
+    width: 200px;
     font-size: 16px;
 }
 .note-desc{
-    width: 240px; 
+    width: 200px; 
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
+

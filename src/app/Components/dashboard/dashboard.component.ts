@@ -12,7 +12,7 @@ import { UpdatelabelComponent } from '../updatelabel/updatelabel.component';
 })
 export class DashboardComponent implements OnInit {
   filterNote:string='';
-  
+  @Output() displayNoteEvent=new EventEmitter<string>();
   constructor(private popup:MatSnackBar,private route:Router,private data:DataService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
@@ -33,9 +33,9 @@ export class DashboardComponent implements OnInit {
     this.data.outgoingData(event.target.value);
   }
   
-  recievelabels(event:any){
+  // recievelabels(event:any){
 
-  }
+  // }
   editlabel(){
     let dialogbox=this.dialog.open(UpdatelabelComponent,{
       width:'40%',
@@ -43,7 +43,10 @@ export class DashboardComponent implements OnInit {
     })
     dialogbox.afterClosed().subscribe(result=>{
       console.log("After update",result);
-      // this.displayNoteEvent.emit(this.message);
+      this.displayNoteEvent.emit(result);
     })
   }
+  
+
+  
 }

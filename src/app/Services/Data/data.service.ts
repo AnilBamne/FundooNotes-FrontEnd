@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
+public labelname:string='';
   constructor() { }
 
   private messageSource=new BehaviorSubject([]);    //messageSource is the input we r providing in search bar

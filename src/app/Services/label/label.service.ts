@@ -41,4 +41,13 @@ token:any
     }
     return this.httpSeervice.postService(this.base+`Label/AddExistingLabel?labelId=`+labelId+`&noteId=`+noteId,{},true,header)
   }
+  getNoteByLabelName(labelName:any){
+    let header={
+      headers:new HttpHeaders({
+        'content-type':'application/json',
+        'Authorization':'Bearer '+this.token
+      })
+    }
+    return this.httpSeervice.getService(this.base+`Label/GetNoteByLabel?labelName=`+labelName,true,header);
+  }
 }

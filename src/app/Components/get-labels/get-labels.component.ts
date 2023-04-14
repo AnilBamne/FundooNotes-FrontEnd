@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DataService } from 'src/app/Services/Data/data.service';
 import { LabelService } from 'src/app/Services/label/label.service';
 
 @Component({
@@ -10,8 +11,8 @@ export class GetLabelsComponent implements OnInit {
   labelArray:any;
   @Input() noteCard:any;
   labelList:any
-
-  constructor(private labelService:LabelService) { }
+  noteListOfLabel:any
+  constructor(private labelService:LabelService,private dataService:DataService) { }
 
   ngOnInit(): void {
     console.log("getting labels")
@@ -29,6 +30,11 @@ export class GetLabelsComponent implements OnInit {
   }
   recieveLabelsEvent(event:any){
     this.getLabel();
+    
+  }
+  shareLabelName(labelName:any){
+    this.dataService.labelname=labelName;
+    console.log("sharing label name via data service :"+labelName);
     
   }
 }

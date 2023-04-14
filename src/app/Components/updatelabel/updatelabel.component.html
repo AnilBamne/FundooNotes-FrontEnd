@@ -1,19 +1,23 @@
 
 <div class="main-div">
-    <label>Edit Label</label>
-    <div>
-        <div>
-            <button title="cancel">X</button>
-            <input placeholder="Create label">
-            <button aria-label="create">OK</button>
+    <div class="label-text">
+        <label class="text label">Edit Label</label>
+    </div>
+    <div class="sub-container">
+        <div class="createlabel">
+            <button mat-button title="Cancel"><img src="../../../assets/clear_black_24dp.svg"></button>
+            <input placeholder="Create label" title="create new label">
+            <button mat-button title="Create"><img src="../../../assets/label-icons/done_black_24dp.svg"></button>
         </div>
-        <div>
-            <button>b</button>
-            <input >
-            <button>b</button>
+        <div *ngFor="let label of labelList" class="labels">
+            <div class="label-container">
+                <button mat-button title="Delete"><img src="../../../assets/label-icons/delete_black_24dp.svg"></button>
+                <input matInput [(ngModel)]="label.labelName">
+                <button mat-button title="Edit"><img src="../../../assets/label-icons/edit_black_24dp.svg"></button>
+            </div>
         </div>
     </div>
-    <div>
-        <button>Done</button>
+    <div class="btn">
+        <button mat-button title="Save" class="text">Done</button>
     </div>
 </div>

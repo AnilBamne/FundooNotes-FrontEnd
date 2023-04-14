@@ -15,13 +15,13 @@
             <form class="form-div" [formGroup]="noteForm" >
                 <div class="title">
                     <input matInput placeholder="Title" formControlName="title" class="titleInput">
-                    <mat-error *ngIf="noteForm.get('title')?.hasError('required')">Title is required</mat-error>
+                    <!-- <mat-error *ngIf="noteForm.get('title')?.hasError('required')">Title is required</mat-error> -->
                     <button mat-button ><img src="../../../assets/takenote-icons/push_pin_black_24dp.svg" height="25px" title="Pin Note"></button>
                 </div>
                 <div class="input">
                     <div >
                         <input matInput placeholder="Take a note" style="margin-left: 10px;" class="takenote" formControlName="description">
-                        <mat-error *ngIf="noteForm.get('description')?.hasError('required')">Note description is required</mat-error>
+                        <!-- <mat-error *ngIf="noteForm.get('description')?.hasError('required')">Note description is required</mat-error> -->
 
                     </div>
                     <div class="bottom" >

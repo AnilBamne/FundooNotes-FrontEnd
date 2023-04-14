@@ -13,6 +13,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { TakenoteComponent } from './Components/takenote/takenote.component';
 import { TrashnoteComponent } from './Components/trashnote/trashnote.component';
+import { LabeledNotesComponent } from './Components/labeled-notes/labeled-notes.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
     {path:'archive',component:ArchivenoteComponent},
     {path:'trash',component:TrashnoteComponent},
     {path:'label',component:GetLabelsComponent},
-    {path:'displaylabel',component:DisplayLabelComponent}
+    {path:'displaylabel',component:DisplayLabelComponent},
+    {path:'labelednotes',component:LabeledNotesComponent}
   ]},
 
 

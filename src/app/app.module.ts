@@ -37,6 +37,7 @@ import { FilterPipe } from './Pipes/filter.pipe';
 import { GetLabelsComponent } from './Components/get-labels/get-labels.component';
 import { DisplayLabelComponent } from './Components/display-label/display-label.component';
 import { UpdatelabelComponent } from './Components/updatelabel/updatelabel.component';
+import { LabeledNotesComponent } from './Components/labeled-notes/labeled-notes.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { UpdatelabelComponent } from './Components/updatelabel/updatelabel.compo
     FilterPipe,
     GetLabelsComponent,
     DisplayLabelComponent,
-    UpdatelabelComponent
+    UpdatelabelComponent,
+    LabeledNotesComponent
   ],
   imports: [
     BrowserModule,

@@ -2,10 +2,12 @@
 .main-container{
     display: flex;
     justify-content: space-between;
+    min-width: 60%;
+    // min-height:;
     // border: 10px solid rgb(227, 161, 29);
 }
 .main-form{
-    min-width: 60%;
+    // min-width: 60%;
 }
 .logo-header{
     font-size: 20px;
@@ -118,7 +120,16 @@
         //justify-content: space-between;
         
     }
+    .mat-form-field{
+        width: auto;
+        // height: 30px;
+        padding: 0px;
+    }
     .logo2{
         display: none;
     }
+    ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0px; 
+    }
+    
 }
