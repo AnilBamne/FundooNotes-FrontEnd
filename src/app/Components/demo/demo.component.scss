@@ -1,4 +1,13 @@
-.display-note{
+.main{
+    align-items: center;
+    
+    border: 2px solid green;
     display: flex;
-    background-color: brown;
+    justify-content: space-between;
+}
+.sub1{
+    background-color: aquamarine;
+    width: 50vw;
+    height: 80vh;
+    padding: 20px;
 }

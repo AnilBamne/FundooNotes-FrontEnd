@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Route, Router } from '@angular/router';
 import { DataService } from 'src/app/Services/Data/data.service';
 import { UpdatelabelComponent } from '../updatelabel/updatelabel.component';
+import { LabelService } from 'src/app/Services/label/label.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,8 +13,8 @@ import { UpdatelabelComponent } from '../updatelabel/updatelabel.component';
 })
 export class DashboardComponent implements OnInit {
   filterNote:string='';
-  @Output() displayNoteEvent=new EventEmitter<string>();
-  constructor(private popup:MatSnackBar,private route:Router,private data:DataService,private dialog:MatDialog) { }
+  labelList:any
+  constructor(private popup:MatSnackBar,private route:Router,private data:DataService,private dialog:MatDialog,private labelService:LabelService) { }
 
   ngOnInit(): void {
   }
@@ -33,20 +34,15 @@ export class DashboardComponent implements OnInit {
     this.data.outgoingData(event.target.value);
   }
   
-  // recievelabels(event:any){
-
-  // }
   editlabel(){
     let dialogbox=this.dialog.open(UpdatelabelComponent,{
       width:'40%',
       height:'auto',
     })
-    dialogbox.afterClosed().subscribe(result=>{
-      console.log("After update",result);
-      this.displayNoteEvent.emit(result);
+    dialogbox.afterClosed().subscribe((result:any)=>{
+      console.log("After label update",result);
     })
   }
-  
 
   
 }

@@ -11,13 +11,13 @@
         </div>
         <div *ngFor="let label of labelList" class="labels">
             <div class="label-container">
-                <button mat-button title="Delete"><img src="../../../assets/label-icons/delete_black_24dp.svg"></button>
+                <button mat-button title="Delete" (click)="deletLabel(label)"><img src="../../../assets/label-icons/delete_black_24dp.svg"></button>
                 <input matInput [(ngModel)]="label.labelName">
-                <button mat-button title="Edit"><img src="../../../assets/label-icons/edit_black_24dp.svg"></button>
+                <button mat-button title="Edit" (click)="editLabel(label)"><img src="../../../assets/label-icons/done_black_24dp.svg"></button>
             </div>
         </div>
     </div>
     <div class="btn">
-        <button mat-button title="Save" class="text">Done</button>
+        <button mat-button title="Save" class="text" (click)="closeDialog()">Done</button>
     </div>
 </div>

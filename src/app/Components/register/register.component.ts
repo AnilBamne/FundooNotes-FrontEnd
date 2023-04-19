@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/Services/user/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/Services/user/user.service';
 export class RegisterComponent implements OnInit {
 registerform!:FormGroup;
 showPass=true;
-  constructor(private formbuilder:FormBuilder,private userService:UserService) { }
+  constructor(private formbuilder:FormBuilder,private userService:UserService,private popup:MatSnackBar) { }
 
   ngOnInit(): void {
     this.registerform=this.formbuilder.group({
@@ -35,6 +36,10 @@ showPass=true;
     this.userService.Register(data).subscribe((res:any)=>{
       console.log(res.message)
       //localStorage.setItem('token',res.data)
+      this.popup.open('Registered Successfully !!!','',{
+        duration:2000,
+        verticalPosition:'bottom'
+      })
     })
   }
 }

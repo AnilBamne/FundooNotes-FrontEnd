@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import {  MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { LabelService } from 'src/app/Services/label/label.service';
 
 @Component({
@@ -9,7 +11,10 @@ import { LabelService } from 'src/app/Services/label/label.service';
 export class UpdatelabelComponent implements OnInit {
   labelArray:any
   labelList:any
-  constructor(private labelService:LabelService) { }
+  labelname:any
+  
+  constructor(private labelService:LabelService,private dialog:MatDialogRef<UpdatelabelComponent>,private popup:MatSnackBar){}
+    
 
   ngOnInit(): void {
     this.getLabel();
@@ -23,5 +28,33 @@ export class UpdatelabelComponent implements OnInit {
       this.labelList=this.labelArray
     })
     // this.labelname="";
+  }
+
+  editLabel(label:any){
+    let data={
+      labelId:label.labelId,
+      labelName:label.labelName
+    }
+    this.labelService.updateLabel(data).subscribe((response:any)=>{
+      console.log(response.message);
+      this.popup.open('Label Updated Successfully !!!','',{
+        duration:2000,
+        verticalPosition:'bottom'
+      })
+    })
+  }
+  closeDialog(){
+    // this.getLabel();
+    this.dialog.close();
+  }
+
+  deletLabel(label:any){
+    this.labelService.deleteLabel(label).subscribe((response:any)=>{
+      console.log(response.message);
+      this.popup.open('Label deleted Successfully !!!','',{
+        duration:2000,
+        verticalPosition:'bottom'
+      })
+    })
   }
 }

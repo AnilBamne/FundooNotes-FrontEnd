@@ -1,0 +1,20 @@
+<div class="main">
+    <div>
+        <p class="text">This text is from child component demo2</p>
+        <div *ngFor="let item of inputData">
+            <p>{{item}}</p>
+        </div>
+    </div>
+    <div style="margin-top: 40px;">
+        <div>{{text}}</div>
+        Data from parent:{{parentData}}
+    </div>
+    <div>
+        <button (click)="clickMe()">Click Me</button>
+    </div>
+    <div>
+        <div *ngIf="isTrue">
+            <p>AfterContentInit gets called after OnDoCheck</p>
+        </div>
+    </div>
+</div>

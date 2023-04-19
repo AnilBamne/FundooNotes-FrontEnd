@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
 public labelname:string='';
+public dataFromSibling:any
   constructor() { }
 
   private messageSource=new BehaviorSubject([]);    //messageSource is the input we r providing in search bar

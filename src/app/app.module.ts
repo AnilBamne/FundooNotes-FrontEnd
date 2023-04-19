@@ -38,6 +38,8 @@ import { GetLabelsComponent } from './Components/get-labels/get-labels.component
 import { DisplayLabelComponent } from './Components/display-label/display-label.component';
 import { UpdatelabelComponent } from './Components/updatelabel/updatelabel.component';
 import { LabeledNotesComponent } from './Components/labeled-notes/labeled-notes.component';
+import { Demo2Component } from './Components/demo2/demo2.component';
+
 
 
 @NgModule({
@@ -60,7 +62,8 @@ import { LabeledNotesComponent } from './Components/labeled-notes/labeled-notes.
     GetLabelsComponent,
     DisplayLabelComponent,
     UpdatelabelComponent,
-    LabeledNotesComponent
+    LabeledNotesComponent,
+    Demo2Component
   ],
   imports: [
     BrowserModule,

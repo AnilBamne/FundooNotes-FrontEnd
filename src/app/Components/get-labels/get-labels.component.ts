@@ -17,8 +17,8 @@ export class GetLabelsComponent implements OnInit {
   ngOnInit(): void {
     console.log("getting labels")
     this.getLabel();
-    
   }
+
   getLabel(){
     this.labelService.get().subscribe((response:any)=>{
       console.log("storing labels in array")
@@ -28,13 +28,6 @@ export class GetLabelsComponent implements OnInit {
     })
     // this.labelname="";
   }
-  recieveLabelsEvent(event:any){
-    this.getLabel();
-    
-  }
-  shareLabelName(labelName:any){
-    this.dataService.labelname=labelName;
-    console.log("sharing label name via data service :"+labelName);
-    
-  }
+  
+ 
 }

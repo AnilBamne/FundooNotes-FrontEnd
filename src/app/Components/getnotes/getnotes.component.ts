@@ -8,7 +8,6 @@ import { NoteService } from 'src/app/Services/note/note.service';
 })
 export class GetnotesComponent implements OnInit {
 notesArray:any;
-// @Output() displayNoteEvent=new EventEmitter<string>();
 
   constructor(private noteService:NoteService) { }
 
