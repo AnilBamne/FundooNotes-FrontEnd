@@ -4,6 +4,7 @@ import { retryWhen } from 'rxjs';
 import { LabelService } from 'src/app/Services/label/label.service';
 import { NoteService } from 'src/app/Services/note/note.service';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-icons',
@@ -27,7 +28,7 @@ export class IconsComponent implements OnInit {
   labelname:any;
   labelArray:any;
   labelList:any;
-  constructor(private noteService:NoteService,private dialog:MatDialog,private labelService:LabelService) { }
+  constructor(private noteService:NoteService,private dialog:MatDialog,private labelService:LabelService,private popup:MatSnackBar) { }
 
   ngOnInit(): void {
     this.isTrashed=this.noteCard.isTrash
@@ -43,6 +44,11 @@ export class IconsComponent implements OnInit {
   this.noteService.archiveNote(reqData).subscribe((response:any)=>{
     console.log(response);
     this.appIconEvent.emit(response)
+    //snackbar for displaying popup msg
+    this.popup.open('Note Archived Successfully !!!','',{
+      duration:2000,
+      verticalPosition:'bottom'
+    })
   })
   }
 
@@ -54,6 +60,11 @@ export class IconsComponent implements OnInit {
     this.noteService.archiveNote(reqData).subscribe((response:any)=>{
       console.log(response);
       this.appIconEvent.emit(response)
+      //snackbar for displaying popup msg
+    this.popup.open('Note UnArchived Successfully !!!','',{
+      duration:2000,
+      verticalPosition:'bottom'
+    })
     })
   }
 
@@ -66,6 +77,11 @@ export class IconsComponent implements OnInit {
     this.noteService.trash(reqData).subscribe((response:any)=>{
       console.log(response.message)
       this.appIconEvent.emit(response)
+      //snackbar for displaying popup msg
+    this.popup.open('Note Trashed Successfully !!!','',{
+      duration:2000,
+      verticalPosition:'bottom'
+    })
     })
   }
   unTrash(){
@@ -76,6 +92,11 @@ export class IconsComponent implements OnInit {
     this.noteService.trash(reqData).subscribe((response:any)=>{
       console.log(response.message)
       this.appIconEvent.emit(response)
+      //snackbar for displaying popup msg
+    this.popup.open('Note Restored Successfully !!!','',{
+      duration:2000,
+      verticalPosition:'bottom'
+    })
     })
   }
   deleteNote(){
@@ -86,6 +107,11 @@ export class IconsComponent implements OnInit {
     this.noteService.deleteNote(reqData).subscribe((response:any)=>{
       console.log(response.message)
       this.appIconEvent.emit(response)
+      //snackbar for displaying popup msg
+    this.popup.open('Note Deleted Successfully !!!','',{
+      duration:2000,
+      verticalPosition:'bottom'
+    })
     })
   }
 
